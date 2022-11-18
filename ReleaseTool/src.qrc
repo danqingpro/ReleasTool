@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/icons8_download.ico</file>
+        <file>Images/icons8_packing.ico</file>
+        <file>Images/icons8_shutdown.ico</file>
+        <file>Images/icons8_about1.ico</file>
+        <file>Images/icons8_info.ico</file>
+        <file>Images/icons8_downloads_folder.ico</file>
+    </qresource>
+</RCC>

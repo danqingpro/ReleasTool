@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReleaseTool</class>
+ <widget class="QMainWindow" name="ReleaseTool">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>732</width>
+    <height>375</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ReleaseTool</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lEdtExePath">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pBtnGetMsvcPath">
+        <property name="text">
+         <string>发行</string>
+        </property>
+        <property name="icon">
+         <iconset resource="src.qrc">
+          <normaloff>:/Images/icons8_packing.ico</normaloff>:/Images/icons8_packing.ico</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPlainTextEdit" name="tEdtDisPlay">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+      </property>
+      <property name="undoRedoEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Tip: Before packaging the application, you can import the program by dragging and importing the (*.exe) program. The packaging path cannot contain Chinese or Spaces.
+提示:在打包应用程序之前，您可以通过拖动并导入(*.exe)程序来导入程序，打包路径不能有中文或有空格。
+</string>
+      </property>
+      <property name="maximumBlockCount">
+       <number>100</number>
+      </property>
+      <property name="backgroundVisible">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="hLayoutDisk">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>编译器安装路径：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lEdtCompilerPath">
+        <property name="toolTip">
+         <string>eg D:Qt5.6.3msvc2013bin</string>
+        </property>
+        <property name="statusTip">
+         <string>eg D:\Qt\5.6.3\msvc2013\bin</string>
+        </property>
+        <property name="whatsThis">
+         <string>eg D:Qt5.6.3msvc2013bin</string>
+        </property>
+        <property name="text">
+         <string>D:\Qt\5.6.3\msvc2013\bin</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pBtnLoad">
+        <property name="toolTip">
+         <string>eg D:Qt5.6.3msvc2013bin</string>
+        </property>
+        <property name="statusTip">
+         <string>eg D:\Qt\5.6.3\msvc2013\bin</string>
+        </property>
+        <property name="whatsThis">
+         <string>eg D:Qt5.6.3msvc2013bin</string>
+        </property>
+        <property name="text">
+         <string>加载</string>
+        </property>
+        <property name="icon">
+         <iconset resource="src.qrc">
+          <normaloff>:/Images/icons8_downloads_folder.ico</normaloff>:/Images/icons8_downloads_folder.ico</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>732</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>导入</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionImport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>发行</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionRelease"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionAboutQt"/>
+    <addaction name="separator"/>
+    <addaction name="actionAboutReleaseTool"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea</set>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionImport"/>
+   <addaction name="separator"/>
+   <addaction name="actionRelease"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+    </font>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="1">
+      <widget class="QLabel" name="lblTime">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblTitle">
+       <property name="font">
+        <font>
+         <family>楷体</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/Images/icons8_download.ico</normaloff>:/Images/icons8_download.ico</iconset>
+   </property>
+   <property name="text">
+    <string>导入*.exe</string>
+   </property>
+  </action>
+  <action name="actionRelease">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/Images/icons8_packing.ico</normaloff>:/Images/icons8_packing.ico</iconset>
+   </property>
+   <property name="text">
+    <string>发行</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/Images/icons8_shutdown.ico</normaloff>:/Images/icons8_shutdown.ico</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/Images/icons8_about1.ico</normaloff>:/Images/icons8_about1.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关于QT</string>
+   </property>
+  </action>
+  <action name="actionAboutReleaseTool">
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/Images/icons8_info.ico</normaloff>:/Images/icons8_info.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关于发行工具</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="src.qrc"/>
+ </resources>
+ <connections/>
+</ui>
